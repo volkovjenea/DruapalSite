@@ -1,0 +1,24 @@
+uuid: 91c16b36-cacc-4630-8fd9-a604cb701671
+langcode: en
+status: true
+dependencies: {  }
+id: moderator
+label: Moderator
+weight: 4
+is_admin: null
+permissions:
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'administer taxonomy'
+  - 'create article content'
+  - 'create event content'
+  - 'create terms in tags'
+  - 'delete any article content'
+  - 'delete any event content'
+  - 'delete terms in tags'
+  - 'edit any article content'
+  - 'edit any event content'
+  - 'edit terms in tags'
+  - 'view own unpublished content'
+  - 'view the administration theme'

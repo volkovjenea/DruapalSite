@@ -1,0 +1,26 @@
+uuid: 89467746-67f3-4e75-8db7-a7b4f1228cb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - drupal8_zymphonies_theme
+_core:
+  default_config_hash: _nAXC7GnTksGBQGHa4izzWtjiIB4BmokhG3r2X69Ew8
+id: drupal8_zymphonies_theme_account_menu
+theme: drupal8_zymphonies_theme
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+visibility: {  }

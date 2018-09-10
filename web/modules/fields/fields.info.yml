@@ -1,0 +1,13 @@
+name: fields
+type: module
+core: 8.x
+dependencies:
+  - address
+  - comment
+  - datetime
+  - field
+  - geolocation
+  - image
+  - path
+  - text
+  - user

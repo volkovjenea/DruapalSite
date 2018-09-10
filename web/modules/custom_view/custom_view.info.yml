@@ -1,0 +1,10 @@
+name: customView
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - image
+  - node
+  - text
+  - user
+  - views

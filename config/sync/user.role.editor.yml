@@ -1,0 +1,24 @@
+uuid: 4ab333c6-eb7d-428a-8dea-8a584f28642e
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: 3
+is_admin: null
+permissions:
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'administer taxonomy'
+  - 'create article content'
+  - 'create event content'
+  - 'create terms in tags'
+  - 'delete own article content'
+  - 'delete own event content'
+  - 'delete terms in tags'
+  - 'edit own article content'
+  - 'edit own event content'
+  - 'edit terms in tags'
+  - 'view own unpublished content'
+  - 'view the administration theme'
