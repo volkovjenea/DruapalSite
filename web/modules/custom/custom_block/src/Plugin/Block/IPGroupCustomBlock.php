@@ -53,23 +53,27 @@ class IPGroupCustomBlock extends BlockBase {
     $renderer = \Drupal::service('renderer');
     $renderer->addCacheableDependency($logo_render_array, $file);
 
+    $url = \Drupal\Core\Url::fromUri(file_create_url($file->getFileUri()))->toString();
 
     $result = new FormattableMarkup(
       '<span class="fullname-wrapper">
         <span class="title-field"><p>Title: @title</p></span>
         <span class="body-field"><p>Body:@body</p></span>
-        <span class="image"><p>Image:@image</p></span>
+        <img src="@image">Alt title</img>
       </span>',
       [
         '@title' => $my_title,
         '@body' => $my_body,
-        '@image' => $renderer,
+        '@image' => $url,
       ]
     );
+    return theme('my_custom_theme', $result);
     return array(
       '#markup' => $result,
-
     );
+//    return [
+//      'image' => $logo_render_array
+//    ];
 
   }
 }
