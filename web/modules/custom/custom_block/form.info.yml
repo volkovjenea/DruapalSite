@@ -1,5 +1,5 @@
 name: IPGroup Admin Form
 type: module
-description: Add custom content on a block.
+description: Add admin form.
 package: IPGroup
 core: '8.x'

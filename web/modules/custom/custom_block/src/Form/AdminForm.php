@@ -7,7 +7,6 @@
 
 	use Drupal\Core\Form\ConfigFormBase;
 	use Drupal\Core\Form\FormStateInterface;
-  use Drupal\file\Entity\File;
 
 	class AdminForm extends ConfigFormBase{
 		/**
@@ -30,7 +29,6 @@
 
 		public function buildForm(array $form, FormStateInterface $form_state) {
 			$config = $this->config('custom_block.adminsettings');
-
 
 			$form['title_field'] = [
 				'#type' => 'textfield',

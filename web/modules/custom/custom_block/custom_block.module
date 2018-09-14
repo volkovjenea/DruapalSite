@@ -1,0 +1,22 @@
+<?php
+/**
+ * Implements hook_theme() to add the template definition.
+ **/
+function custom_block_theme($existing, $type, $theme, $path) {
+
+  $theme=array();
+
+  $theme['custom_template'] = [
+      'variables' => [
+        'title' => NULL,
+        'body'=>NULL,
+//        'image'=>NULL
+      ],
+      //'template' => 'custom_template',
+    ];
+
+
+/*  var_dump($theme);
+  die('1');*/
+  return $theme;
+}

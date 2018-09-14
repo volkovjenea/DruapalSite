@@ -2,6 +2,7 @@
 
 namespace Drupal\custom_block\Plugin\Block;
 
+
 use Drupal\Core\Block\BlockBase;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\file\Entity\File;
@@ -26,7 +27,7 @@ class IPGroupCustomBlock extends BlockBase {
     $my_title = \Drupal::config('custom_block.adminsettings')->get('title_field');
     $my_body = \Drupal::config('custom_block.adminsettings')->get('body_field');
 //    $my_image = \Drupal::config('custom_block.adminsettings')->get('image');
-    $file=File::load(12);
+    $file=File::load(8);
 
     $variables = array(
       'style_name' => 'thumbnail',
@@ -55,22 +56,27 @@ class IPGroupCustomBlock extends BlockBase {
 
     $url = \Drupal\Core\Url::fromUri(file_create_url($file->getFileUri()))->toString();
 
-    $result = new FormattableMarkup(
+
+/*    $result = new FormattableMarkup(
       '<span class="fullname-wrapper">
         <span class="title-field"><p>Title: @title</p></span>
         <span class="body-field"><p>Body:@body</p></span>
-        <img src="@image">Alt title</img>
+        <img src="@image"></img>
       </span>',
       [
         '@title' => $my_title,
         '@body' => $my_body,
         '@image' => $url,
       ]
-    );
-    return theme('my_custom_theme', $result);
-    return array(
-      '#markup' => $result,
-    );
+    );*/
+
+    return [
+      '#theme' => 'custom_template',
+      '#title' => $my_title,
+      '#body' => $my_body,
+//      '#image'=>$url,
+    ];
+
 //    return [
 //      'image' => $logo_render_array
 //    ];
