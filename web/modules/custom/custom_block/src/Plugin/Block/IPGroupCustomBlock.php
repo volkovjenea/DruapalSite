@@ -24,6 +24,7 @@ class IPGroupCustomBlock extends BlockBase {
    */
 
   public function build() {
+
     $my_title = \Drupal::config('custom_block.adminsettings')->get('title_field');
     $my_body = \Drupal::config('custom_block.adminsettings')->get('body_field');
 //    $my_image = \Drupal::config('custom_block.adminsettings')->get('image');
@@ -74,12 +75,15 @@ class IPGroupCustomBlock extends BlockBase {
       '#theme' => 'custom_template',
       '#title' => $my_title,
       '#body' => $my_body,
-//      '#image'=>$url,
+      '#image'=>$url,
     ];
 
 //    return [
 //      'image' => $logo_render_array
 //    ];
 
+    function custom_block_node_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+      var_dump($entity);
+    }
   }
 }

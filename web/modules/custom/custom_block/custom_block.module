@@ -1,4 +1,6 @@
 <?php
+
+
 /**
  * Implements hook_theme() to add the template definition.
  **/
@@ -10,7 +12,7 @@ function custom_block_theme($existing, $type, $theme, $path) {
       'variables' => [
         'title' => NULL,
         'body'=>NULL,
-//        'image'=>NULL
+        'image'=>NULL
       ],
       //'template' => 'custom_template',
     ];
@@ -19,4 +21,28 @@ function custom_block_theme($existing, $type, $theme, $path) {
 /*  var_dump($theme);
   die('1');*/
   return $theme;
+}
+
+
+function custom_block_article_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  var_dump($entity);
+  if (!empty($build['field_scrap_libraries'])) {
+    foreach (Element::children($build['field_scrap_libraries']) as $key) {
+      $url = Url::fromUserInput("/scrap/" . $entity->id() . '/libraries');
+      $build['field_scrap_libraries'][$key]['#url'] = $url;
+    }
+  }
+  if (!empty($build['field_scrap_events'])) {
+    foreach (Element::children($build['field_scrap_events']) as $key) {
+      $url = Url::fromUserInput("/scrap/" . $entity->id() . '/events');
+      $build['field_scrap_events'][$key]['#url'] = $url;
+    }
+  }
+  if (!empty($build['field_scrap_news'])) {
+    foreach (Element::children($build['field_scrap_events']) as $key) {
+      $url = Url::fromUserInput("/scrap/" . $entity->id() . '/news');
+      $build['field_scrap_news'][$key]['#url'] = $url;
+    }
+
+  }
 }
