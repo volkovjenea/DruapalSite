@@ -43,7 +43,7 @@
 				'#default_value' => $config->get('body_field'),
 			];
       $form['imagearray'] = array(
-        '#title' => t('Image'),
+        '#title' => t('image'),
         '#type' => 'managed_file',
         '#description' => t('The uploaded image will be displayed on this page using the image style chosen below.'),
         '#default_value' => $config->get('imagearray'),

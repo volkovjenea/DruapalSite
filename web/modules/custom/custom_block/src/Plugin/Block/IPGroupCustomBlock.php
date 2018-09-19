@@ -28,6 +28,7 @@ class IPGroupCustomBlock extends BlockBase {
     $my_title = \Drupal::config('custom_block.adminsettings')->get('title_field');
     $my_body = \Drupal::config('custom_block.adminsettings')->get('body_field');
 //    $my_image = \Drupal::config('custom_block.adminsettings')->get('image');
+
     $file=File::load(8);
 
     $variables = array(
@@ -77,13 +78,5 @@ class IPGroupCustomBlock extends BlockBase {
       '#body' => $my_body,
       '#image'=>$url,
     ];
-
-//    return [
-//      'image' => $logo_render_array
-//    ];
-
-    function custom_block_node_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
-      var_dump($entity);
-    }
   }
 }
