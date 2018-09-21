@@ -2,6 +2,7 @@
 use Drupal\Core\Url;
 use Drupal\Core\Render\Element;
 
+
 /**
  * Implements hook_theme() to add the template definition.
  **/
@@ -25,7 +26,7 @@ function custom_block_node_view_alter(array &$build,Drupal\Core\Entity\EntityInt
   $user = \Drupal::currentUser()->id();
   if (!empty($build['field_bookmark'])) {
     foreach (Element::children($build['field_bookmark']) as $key) {
-      $url = Url::fromUserInput("/bookmark/" . $entity->id() . '/' . $user->uid);
+      $url = Url::fromUserInput("/bookmark/" . $entity->id() . '/');
       $build['field_bookmark'][$key]['#url'] = $url;
 
     }

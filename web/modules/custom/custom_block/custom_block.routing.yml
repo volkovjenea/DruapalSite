@@ -9,7 +9,7 @@ form.admin_settings_form:
     _admin_route: TRUE
 
 custom_block.bookmark:
-  path: '/bookmark/{node}/{user}'
+  path: '/bookmark/{node}/{uid}'
   defaults:
     _controller: '\Drupal\custom_block\Controller\CustomController::content'
     _title: 'Custom block controller'
