@@ -18,7 +18,11 @@ class CustomController extends ControllerBase {
   }
 
   function my_goto (){
-    g
+    $redirect = Drupal\redirect\Entity\Redirect::create([
+      'redirect_redirect' => 'internal:/node/187',
+      'language' => 'und',
+      'status_code' => '301',
+    ]);
     $redirect->setSource('old-page.php', array('id' => 107));
     $redirect->save();
   }
